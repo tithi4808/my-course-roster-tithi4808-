@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import { FaDollarSign,FaBookOpen } from 'react-icons/fa';
 
-const Card = ({card}) => {
-    const {image,title,details,price,credits}=card
+const Card = ({card,handlecart}) => {
+    const {image,title,details,price,credits,id}=card
     return (
         <div className="border-2 mb-10 p-4 rounded-lg">
            
@@ -17,7 +17,7 @@ const Card = ({card}) => {
 
            </div>
            <div className="flex justify-center mt-4 ">
-            <button className="bg-sky-400 text-white w-full my-2 py-1 rounded">Select</button>
+        <button onClick={()=>handlecart(card,card.credits,card.id)} className="bg-sky-400 text-white w-full my-2 py-1 rounded">Select</button>
            </div>
            
             
@@ -25,7 +25,9 @@ const Card = ({card}) => {
     );
 };
 Card.propTypes={
-    card:PropTypes.object.isRequired
+    card:PropTypes.object.isRequired,
+    handlecart:PropTypes.func,
+    handlesettime:PropTypes.func
 }
 
 export default Card;

@@ -2,15 +2,22 @@ import Cart from "./Cart";
 import Credit from "./Credit";
 import Remaining from "./Remaining";
 
-const Home = () => {
+const Home = (cart,times,credit) => {
+   
+   
+
+    
+    
     return (
         <div className='w-1/3 p-4 gap-4'>
             <div className="border-2 p-8 rounded-lg ">
-                <Remaining></Remaining>
+                <Remaining cart={cart} times={times} ></Remaining>
                 <hr />
-            <Cart></Cart>
+               <Cart cart={cart}></Cart>
+               
+            
             <hr />
-            <Credit></Credit>
+            <Credit cart={cart} credit={credit}></Credit>
             </div>
 
             
@@ -18,5 +25,6 @@ const Home = () => {
         </div>
     );
 };
+
 
 export default Home;

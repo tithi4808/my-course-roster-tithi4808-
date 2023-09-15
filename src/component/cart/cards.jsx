@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import PropTypes from "prop-types"
 
 
-const Cards = () => {
+const Cards = ({handlecart}) => {
     const [cards,setcards]=useState([])
 
     useEffect(()=>{
@@ -15,7 +16,7 @@ const Cards = () => {
     return (
         <div className="w-2/3 grid grid-cols-3 gap-4 ">
             {
-                cards.map(card=><Card key={card.id} card={card}></Card>)
+                cards.map(card=><Card key={card.id} handlecart={handlecart}  card={card}></Card>)
             }
             
             
@@ -23,5 +24,9 @@ const Cards = () => {
         </div>
     );
 };
+Cards.prototype={
+    handlecart:PropTypes.func,
+    handlesettime:PropTypes.func
+}
 
 export default Cards;

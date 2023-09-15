@@ -1,13 +1,21 @@
+import PropTypes from "prop-types"
 
+const Remaining = ({cart}) => {
+    
+        
+        const {times}=cart
+    
 
-const Remaining = () => {
     return (
         <div className="mt-2 mb-4">
 
-             Credit Hour Remaining : 
+             Credit Hour Remaining : {times}
             
         </div>
     );
 };
+Remaining.propTypes={
+    times:PropTypes.object.isRequired
+}
 
 export default Remaining;
