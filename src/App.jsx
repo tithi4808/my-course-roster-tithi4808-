@@ -2,7 +2,9 @@ import Cards from './component/cart/cards'
 import Home from './component/Home/home'
 import './App.css'
 import { useCallback, useEffect, useState } from 'react'
-
+// import '@sweetalert2/themes/dark/dark.scss';
+// import Swal from 'sweetalert2/src/sweetalert2.js'
+import swal from 'sweetalert';
 
 function App() {
   const [cart,setcart]=useState([])
@@ -18,16 +20,15 @@ function App() {
     const isexist=cart.find(item=>item.id==cartitems.id)
     if(isexist)
     {
-      alert('alert')
+      swal("You Have already added this in the cart");
     }
     else{
-      // const newitem=[...cart,cartitems];
-      // setcart(newitem)
+     
       const newtime=times-credit;
     const newcredit=credits+credit;
       if(newtime<0 && newcredit>20)
       {
-        alert('no')
+        swal("You have reached the credit hour limit");
       }
       else{
         settimes(newtime)

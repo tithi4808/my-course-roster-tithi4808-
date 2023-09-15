@@ -10,7 +10,7 @@ const Cart = ({cart}) => {
             <h1 className="text-xl font-bold">Course Name</h1>
             <ol className="list-decimal ml-4">
              {
-                 cart.cart.map(carts=><li>{carts.title}</li>)
+                 cart.cart.map(carts=><li key={carts.id}>{carts.title}</li>)
                 
              }
             </ol>
