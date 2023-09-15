@@ -4,7 +4,7 @@ import Remaining from "./Remaining";
 
 const Home = (cart,times,credit) => {
    
-   
+   console.log(cart)
 
     
     

@@ -6,21 +6,41 @@ import { useCallback, useEffect, useState } from 'react'
 
 function App() {
   const [cart,setcart]=useState([])
+
+
+
   const [times,settimes]=useState(20)
   const [credits,setcredits]=useState(0)
   
   
   const handlecart=(cartitems,credit)=>{
-    const newitem=[...cart,cartitems];
-    setcart(newitem)
-    console.log(cartitems)
-    const newtime=times-credit;
+
+    const isexist=cart.find(item=>item.id==cartitems.id)
+    if(isexist)
+    {
+      alert('alert')
+    }
+    else{
+      // const newitem=[...cart,cartitems];
+      // setcart(newitem)
+      const newtime=times-credit;
     const newcredit=credits+credit;
-      if(newtime>=0 && newcredit<=20)
+      if(newtime<0 && newcredit>20)
       {
-        settimes(newtime)
-      setcredits(newcredit)
+        alert('no')
       }
+      else{
+        settimes(newtime)
+        setcredits(newcredit)
+        const newitem=[...cart,cartitems];
+       setcart(newitem)
+      }
+
+    }
+    
+    
+    
+    
      
     
    
