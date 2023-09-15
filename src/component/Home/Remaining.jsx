@@ -9,7 +9,7 @@ const Remaining = ({cart}) => {
     return (
         <div className="mt-2 mb-4">
 
-             Credit Hour Remaining : {times}
+             Credit Hour Remaining : {times}hr
             
         </div>
     );
